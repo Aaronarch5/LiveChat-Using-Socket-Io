@@ -32,6 +32,10 @@ const io = SocketIO(server);
 //web sockets
 io.on('connection',(socket)=>{
   console.log('new connection',socket.id);
+
+  socket.on('chat:message',(data)=>{
+    console.log(data);
+  });
 });
 
 
